@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+	
+	<nav class="navbar navbar-inverse navbar-static-top">
+  		<div class="container-fluid">
+			<div class="navbar-header">  
+    			<a class="navbar-brand" href="#">
+      				<img alt="Imobiliaria" src="/images/imobi-logo.png"/>
+    			</a>	
+  			</div>
+  			<ul class="nav navbar-nav " >
+  				 <li><a href="/home">HOME<span class="sr-only"></span></a></li>
+       			 <li sec:authorize="hasRole('ADMIN')"><a href="/negocio">NEGÓCIOS<span class="sr-only"></span></a></li>
+       			 <li sec:authorize="hasRole('ADMIN')"><a href="/categoria">CATEGORIAS<span class="sr-only"></span></a></li>
+       			 <li sec:authorize="hasRole('ADMIN')"><a href="/quarto">QUARTOS<span class="sr-only"></span></a></li>
+       			 <li sec:authorize="hasRole('ADMIN')"><a href="/estado">ESTADOS<span class="sr-only"></span></a></li>
+       			 <li sec:authorize="hasRole('ADMIN')"><a href="/municipio">MUNICIPIOS<span class="sr-only"></span></a></li>
+       			 <li sec:authorize="hasRole('ADMIN')"><a href="/bairro">BAIRROS<span class="sr-only"></span></a></li>
+       			 <li><a href="/imoveis">IMÓVEIS<span class="sr-only"></span></a></li>
+        	</ul>
+        	<form action="/logout" method="post" class="navbar-form navbar-right">
+		       <button type="submit" class="btn btn-hiden">
+		        	<span class="glyphicon glyphicon-log-out"></span> Sair
+		        </button>
+		        
+			</form>
+  			</div>
+	</nav>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" 
+   xmlns:th="http://www.thymeleaf.org"
+   xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+   layout:decorate="~{LayoutPadrao}">
+<head>
+<title>Cadastro de Negocio</title>
+</head>
+<section layout:fragment="conteudo">
+	<form class="form-horizontal" method="POST" action="/negocio" th:object="${negocio}">
+		<div th:replace="MensagemGeral"></div>
+		<div th:replace="MensagemErro"></div>
+		
+		<div class="panel panel-default">
+			<div class="panel-heading" >
+					<div class="clearfix">
+						<h1 class="panel-title aw-titulo-panel">Novo Negócio</h1>
+						<a class="btn btn-link aw-link-panel" href="/negocio">Voltar para negócio</a>
+					</div>	
+			</div>
+		<div class="panel-body">
+				<input type="hidden" th:field="*{idNegocio}"/>
+				<div class="form-group" th:classappend= "${#fields.hasErrors('nomeNegocio')} ? has-error">
+						<label for="negocio" class="col-sm-2 control-label">Negócio</label>
+					<div class="col-sm-4">
+						<input type="text" class="form-control" id="negocio" name="negocio" th:field="*{nomeNegocio}"
+						placeholder="Informe o nome do negócio"/>
+					</div>
+				</div>	
+						
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<button type="submit" class="btn btn-success">Cadastrar</button>
+				</div>
+			</div>
+		</div>
+		</div>
+	</form>
+</section>
+</html>

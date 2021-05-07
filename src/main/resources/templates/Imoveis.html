@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" 
+   xmlns:th="http://www.thymeleaf.org"
+   xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+   layout:decorate="~{LayoutPadrao}">
+<head>
+<title>Imóveis</title>
+</head>
+<section layout:fragment="conteudo">
+	<div class="panel panel-default" >
+	 	<div class="panel-heading">
+			<div class="clearfix">
+			<h1 class="panel-title aw-titulo-panel">Pesquisa de imóveis</h1>
+			<a class="btn btn-link aw-link-panel" href="/imoveis/novo">Novo imóvel</a>		
+			</div>	
+		</div>
+	<div class="panel-body">
+		<form method="GET" class="form-horizontal" action="/imoveis" th:object="${filtro}">
+			<div class="form-group">
+				<div class="col-sm-4">
+					<div class="input-group">
+						<input class="form-control" placeholder="Qual imóvel você está procurando?"
+							autofocus="autofocus" th:field="*{descricao}"></input>
+						<span class="input-group-btn">
+							<button type="submit" class="btn btn-default">
+								<i class="glyphicon glyphicon-search"></i>
+							</button>
+						</span>
+					</div>
+					
+				</div>
+			</div>
+		</form>
+		<table class="table table-bordered table-striped">
+			<thead>						
+				<tr>
+					<th class="text-center col-md-1">IdImovel</th>
+					<th class="text-center col-md-1">Negócios</th>
+					<th class="text-center col-md-1">Categorias</th>
+					<th class="text-center col-md-1">Estados</th>
+					<th class="text-center col-md-1">Quartos</th>
+					<th class="text-center col-md-1">Ações</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="imovel : ${paginacao}">
+					<td class="text-center" th:text="${imovel.id}">1</td>
+				 	<td class="text-center" th:text="${imovel.negocio.nomeNegocio}"></td>
+					<td class="text-center" th:text="${imovel.categoria.nomeCategoria}"></td>
+					<td class="text-center" th:text="${imovel.estado.nomeEstado}"></td>
+					<td class="text-center" th:text="${imovel.quarto.quantidade}"></td>
+					<td class="text-center">
+						<div class = "form-group" >
+							<a type="submit" class="btn btn-info" 
+							th:href="@{/imoveis/{codigo}(codigo=${imovel.id})}">Editar</a>
+							
+							<a type="submit" class="btn btn-danger" data-toggle="modal" 
+							th:attr="data-codigo=${imovel.id}, data-descricao=${imovel.id}, data-elemento='imoveis'"
+							data-target="#confirmacaoExclusao"
+							>Excluir</a>					
+						</div>			
+					</td>
+				</tr>
+				<tr>
+					<td colspan="6" th:if="${#lists.isEmpty(paginacao)}">Nenhum imóvel encontrado</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+		<div th:replace="confirmacaoExclusao"></div>
+	</div>
+	<nav>
+ 		 <ul class="pager aw-pagincao">
+    		<li class="previous disabled"><a th:href="@{/imoveis?numPage={numPagina}(numPagina=${pageAnterior})}"><span aria-hidden="true">&larr;</span> Anterior</a></li>
+    		<li class="next"><a th:href="@{/imoveis?numPage={numPagina}(numPagina=${pageProximo})}" th:if="${!#lists.isEmpty(paginacao)}" 
+    			th:unless="${!#lists.isEmpty(filtro.descricao)}">Próximo <span aria-hidden="true">&rarr;</span></a></li>
+ 		 </ul>
+	</nav>
+</section>
+</html>

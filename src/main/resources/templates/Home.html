@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" 
+   xmlns:th="http://www.thymeleaf.org"
+   xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+   layout:decorate="~{LayoutPadrao}">
+<head>
+<title>Home</title>
+</head>
+<section layout:fragment="conteudo">
+	<form action="/home" method="post">
+		<div class="panel-heading">
+		<div th:replace="MensagemGeral"></div>
+		<div class="panel panel-default">
+			<button class="btn btn-warning aw-btn-panel"> POPULAR BANCO </button>
+		</div>
+		</div>
+	</form>
+	<div class="jumbotron ">
+		<div class="panel-heading aw-text">
+  			<h1>BEM VINDO À VALE INVEST!</h1>
+  			<h2>A imobiliária digital livre de burocracia.</h2>
+  				<p> Na vale invest, você aluga ou vende seu imóvel de forma prática, confiável e digital. somos até 10x mias rápidos do que
+  				as imobiliárias tradicionais, seu imóvel não fica parado muito tempo e você economiza com IPTU, condomínioe outros gastos.</p>
+  				<p><a class="btn btn-success btn-lg" href="/imoveis/novo" role="button">Cadastrar Imóvel</a></p>
+  		</div>	
+	</div>
+	<div class="row aw-home" >
+  		<div class="col-sm-6 col-md-4">
+    	<div class="thumbnail">
+      		<img src="/images/casa01.jpg" alt="casa01">
+      	<div class="caption">
+        	<h3>Casa Vila Oliveira</h3>
+        	<p>Casa terrea com 4 quartos, Os ambientes de convívio são integrados para otimizar os espaços e a circulação, ao mesmo tempo que os 
+        	quartos ficam separados, dando mais privacidade aos moradores.</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-sm-6 col-md-4">
+  	<div class="thumbnail">
+  		<img src="/images/casa02.jpg" alt="casa02">
+  	<div class="caption">
+  		<h3>Sobrado Aruã</h3>
+  		<p>Apresentamos um projeto de sobrado com fachada imponente e moderna para pessoas que querem fugir do comum. Com uma garagem para 3 carros, 
+  		essa casa possui ambientes integrados no pavimento inferior.</p>
+  	</div>
+  	</div>
+  </div>
+  
+   <div class="col-sm-6 col-md-4">
+  	<div class="thumbnail">
+  		<img src="/images/casa03.jpg" alt="casa03">
+  	<div class="caption">
+  		<h3>Casa Terrea Morumbi</h3>
+  		<p>Casa aconchegante, discreta e com uma vista linda para o final da represa. Uma área de lazer com piscina, jacuzzi e área gourmet com 
+  		churrasqueira.Temos caiaques que ficam à disposição dos hóspedes. </p>
+  	</div>
+  	</div>
+  </div>
+  
+  <div class="col-sm-6 col-md-4">
+  	<div class="thumbnail">
+  		<img src="/images/casa04.jpg" alt="casa04">
+  	<div class="caption">
+  		<h3>Casa Cond Real Park</h3>
+  		<p>Casa terrea, 3 dormitórios, 4 banheiros e 1 lavabo àrea da piscina privativa fechada com Tela, armários em Madeira, cozinha planejada,
+  		jardim amplo com gramado natural, vegetação diversificada </p>
+  	</div>
+  	</div>
+  </div>
+  
+   <div class="col-sm-6 col-md-4">
+  	<div class="thumbnail">
+  		<img src="/images/casa05.jpg" alt="casa05">
+  	<div class="caption">
+  		<h3>Casa Americana</h3>
+  		<p>Área externa com luminárias embutidas no piso de madeira, sala de jantar com cadeiras estofadas e portas de correr de madeira. Garagem para 3 
+  		carros fogueria na area extena. </p>
+  	</div>
+  	</div>
+  </div>
+  
+   <div class="col-sm-6 col-md-4">
+  	<div class="thumbnail">
+  		<img src="/images/casa06.jpg" alt="casa06">
+  	<div class="caption">
+  		<h3>Sitio dos Montteiros</h3>
+  		<p>Sitio com uma área de lazer com piscina aquecida com banquetas e leds, jacuzzi e área gourmet com 
+  		churrasqueira.Temos caiaques que ficam à disposição dos hóspedes. </p>
+  	</div>
+  	</div>
+  </div>
+</div>
+<div class="panel panel-body aw-contato">
+  	<div class="panel-body aw-text">
+  		<h4>CONTATO</h4>
+  	</div>
+  		<div class="panel-footer aw-test">
+  			<img alt="logo" src="/images/imobi-logo.png">
+  		<div >
+  		<h4>Email: suzy.uemura@gft.com</h4>
+  		<h4>Contato (11) 95321-0703</h4>
+  		<h4>Endereço: Rua Alameda Sto Ângelo n° 501, Jundiapeba, Mogi das Cruzes - SP</h4>
+		</div>
+  	</div>
+</div>
+	
+</section>
+</html>

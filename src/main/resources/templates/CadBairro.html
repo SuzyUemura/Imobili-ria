@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" 
+   xmlns:th="http://www.thymeleaf.org"
+   xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+   layout:decorate="~{LayoutPadrao}">
+<head>
+<title>Cadastro de Municipios</title>
+</head>
+<section layout:fragment="conteudo">
+	<form class="form-horizontal" method="POST" action="/bairro" th:object="${bairro}">
+		<div th:replace="MensagemGeral"></div>
+		<div th:replace="MensagemErro"></div>
+		
+		<div class="panel panel-default">
+			<div class="panel-heading" >
+					<div class="clearfix">
+						<h1 class="panel-title aw-titulo-panel">Novo bairro</h1>
+						<a class="btn btn-link aw-link-panel" href="/bairro">Voltar para bairros</a>
+					</div>	
+			</div>
+		<div class="panel-body">
+				<input type="hidden" th:field="*{idBairro}"/>
+				<div class="form-group" th:classappend= "${#fields.hasErrors('estado')} ? has-error">
+						<label for="nomeEstado" class="col-sm-2 control-label">Estado</label>
+					<div class="col-sm-3" >
+					<select class="form-control" name="nomeEstado" th:field="*{estado}">
+						<option th:each="estado : ${todosEstados}" th:value="${estado.idEstado}"
+								th:text="${estado.nomeEstado}"></option>
+					</select>
+					</div>	
+			   </div>
+				<div class="form-group" th:classappend= "${#fields.hasErrors('municipio')} ? has-error">
+						<label for="nomeMunicipio" class="col-sm-2 control-label">Municipio</label>
+					<div class="col-sm-3" >
+					<select class="form-control" name="nomeMunicipio" th:field="*{municipio}">
+						<option th:each="municipio : ${todosMunicipios}" th:value="${municipio.idMunicipio}"
+								th:text="${municipio.nomeMunicipio}"></option>
+					</select>
+					</div>
+				</div>
+				<div class="form-group" th:classappend= "${#fields.hasErrors('nomeBairro')} ? has-error">
+						<label for="bairro" class="col-sm-2 control-label">Bairro</label>
+					<div class="col-sm-3">
+						<input type="text" class="form-control" id="bairro"  name="bairro" th:field="*{nomeBairro}"
+						placeholder="Informe o Bairro">
+					</div>
+				</div>		
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<button type="submit" class="btn btn-success">Cadastrar</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	</form>
+</section>
+</html>

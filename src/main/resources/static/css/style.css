@@ -1,0 +1,60 @@
+.navbar-brand {
+	padding-top: 11px;
+}
+
+.panel-default {
+	margin-left: 100px;
+	margin-right: 100px;
+	margin-top: 60px;
+}
+
+.aw-link-panel {
+	float: right;
+	padding: 0px;
+}
+
+.aw-titulo-panel {
+	float: left; 
+	padding-top: 2px;
+}
+
+.alert {
+	margin-left: 20px;
+	margin-right: 20px;
+}
+
+.aw-btn-panel {
+	float: right;
+	margin-right: 15px;
+	margin-top: -45px;
+	
+}
+
+.aw-pagincao {
+	margin-left: 20px;
+	margin-right: 20px;
+}
+
+.aw-home {
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+.aw-contato {
+	border-color: #A9A9A9;
+	background-color: #DCDCDC;
+	text-transform: capitalize; 
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+.aw-text {
+	text-transform: uppercase #000000;
+}
+
+.aw-test {
+	background-color: #F8F8FF;
+	border-color: #DCDCDC;
+	border-radius: 10px;
+	text-transform: capitalize; 
+}
